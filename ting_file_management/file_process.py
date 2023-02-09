@@ -1,5 +1,5 @@
 from ting_file_management.file_management import txt_importer
-
+import sys
 
 def process(path_file, instance):
     index = 0
@@ -28,4 +28,9 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        file = instance.search(position)
+        print(file)
+        return
+    except Exception as err:
+        print(err, file=sys.stderr)
