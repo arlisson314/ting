@@ -18,6 +18,6 @@ class Queue(AbstractQueue):
 
     def search(self, index):
         if 0 > index or index > self.__len__():
-            raise IndexError()
+            raise IndexError('Posição inválida')
         else:
             return self.data[index]
