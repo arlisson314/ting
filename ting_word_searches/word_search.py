@@ -5,12 +5,12 @@ def exists_word(word, instance):
         lines = []
         for index, line in enumerate(file['linhas_do_arquivo']):
             if word.lower() in line.lower():
-                lines.append(index + 1)
+                lines.append({'linha': index + 1})
         if lines:
             result.append({
                 'palavra': word,
                 'arquivo': file['nome_do_arquivo'],
-                'ocorrencias': [{'linha': line_num} for line_num in lines]
+                'ocorrencias': lines
             })
     return result
 
